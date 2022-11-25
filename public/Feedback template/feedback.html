@@ -1,0 +1,92 @@
+
+
+{/* header */}
+<div className='header'>
+    <h2 style={{backgroundColor: '#fff'}}>Feedback App </h2>
+</div>
+{/*  / header */}
+
+
+<div className="container">
+    {/* feedback form */}
+    <div className='card'>
+        <h2>Leave your feedback</h2>
+
+        <form>
+            <ul className='rating'>
+
+
+                <li>
+                    <input type="radio" name="rating" value="1" id="1" />
+                    <label htmlFor="1">1</label>
+                </li>
+                <li>
+                    <input type="radio" name="rating" value="2" id="2" />
+                    <label htmlFor="2">2</label>
+                </li>
+                <li>
+                    <input type="radio" name="rating" value="3" id="3" />
+                    <label htmlFor="3">3</label>
+                </li>
+                <li>
+                    <input type="radio" name="rating" value="4" id="4" />
+                    <label htmlFor="4">4</label>
+                </li>
+                <li>
+                    <input type="radio" name="rating" value="5"  id="5"/>
+                    <label htmlFor="5">5</label>
+                </li>
+                <li>
+                    <input type="radio" name="rating" value="6" id="6" />
+                    <label htmlFor="6">6</label>
+                </li>
+                <li>
+                    <input type="radio" name="rating" value="7"  id="7"/>
+                    <label htmlFor="7">7</label>
+                </li>
+                <li>
+                    <input type="radio" name="rating" value="8" id="8" />
+                    <label htmlFor="8">8</label>
+                </li>
+                <li>
+                    <input type="radio" name="rating" value="9"  id="9" />
+                    <label htmlFor="9">9</label>
+                </li>
+                <li>
+                    <input type="radio" name="rating" value="10"  id="10" />
+                    <label htmlFor="10">10</label>
+                </li>
+
+
+            </ul>
+            <div className='input-group'>
+                <input />
+                <button className="btn btn-secondary">send</button>
+            </div>
+        </form>
+    </div>
+    {/* / feedback form */}
+    {/* feedback stats */}
+    <div className='feedback-stats'>
+        <h4>Feedbacks : 5</h4>
+        <h4>average : 5.75</h4>
+    </div>
+    {/* /feedback stats */}
+    {/* feedbacks */}
+    <div>
+        {/* feedback card */}
+        <div className='card'>
+
+            <button className='close'>
+                x
+            </button>
+            <button className='edit'>
+                E
+            </button>
+            <h3 className='num-display'>5</h3>
+            <p> Test Feedback </p>
+        </div>
+        {/* /feedback card */}
+    </div>
+    {/* /feedbacks */}
+</div>

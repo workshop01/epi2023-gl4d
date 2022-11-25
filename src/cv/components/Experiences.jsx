@@ -4,7 +4,7 @@ export const Experiences = ({ experiences }) => {
     return (
        
         <section>
-            
+            {/*  */}
             <h2>Expériences professionnelles</h2>
 
             {
