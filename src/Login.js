@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export const Login = () => {
 
+    const navigate = useNavigate()
     const [form, setForm] = useState({
         email: '', password: ''
     })
@@ -9,6 +11,10 @@ export const Login = () => {
     const save = (event) => {
         event.preventDefault() // annuler l'action par defaut du bouton (refresh)
         console.log(form)
+
+        if(form.email === 'admin@admin.com'){
+            navigate('/feedback')
+        }
     }
     const setFormValue = (event, attribut) =>
         setForm({ ...form, [attribut]: event.target.value })

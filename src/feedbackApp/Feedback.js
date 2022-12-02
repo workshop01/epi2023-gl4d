@@ -8,9 +8,20 @@ export const Feedback = () => {
     const [data , setData] = useState([{
        id :1, rating: 5, text: "Nice"
     }])
+    const [editedFeed , setFeed] = useState()
+
     const send= (e , form)=>{
+        console.log(form)
         e.preventDefault();
-        setData([{...form , id : data.length+1} , ...data])
+        if(form.id){
+            // modification
+            setData(data.map(old=> old.id == form.id ? form : old))
+            setFeed()
+        }else{
+            // ajout
+            setData([{...form , id : data.length+1} , ...data])
+
+        }
         console.log(data)
        
     }
@@ -18,6 +29,13 @@ export const Feedback = () => {
         console.log('remove' , feedback)
 
         setData(data.filter((x)=> x.id !== feedback.id))
+    }   
+    
+
+    /* Modification d'un feedback */
+    
+    const edit = (feedback)=>{
+        setFeed(feedback)
     }
     return (
         <div>
@@ -27,11 +45,11 @@ export const Feedback = () => {
 
 
             <div className="container">
-               <FeedbackForm send={send}/>
+               <FeedbackForm send={send} editedFeed={editedFeed}  />
                 {/* feedback stats */}
                <FeedbackStats/>
                 {/* /feedback stats */}
-                <FeedbackList data={data} remove={remove}/>
+                <FeedbackList data={data} remove={remove} edit={edit}/>
             </div>
         </div>
     )

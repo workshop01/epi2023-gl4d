@@ -1,6 +1,8 @@
 import React from 'react'
+import { FaEdit  } from "react-icons/fa";
+import { FcEmptyTrash } from "react-icons/fc";
 
-export const FeedbackList = ({data , remove}) => {
+export const FeedbackList = ({data , remove , edit}) => {
     
     return (
         <div>
@@ -12,12 +14,12 @@ export const FeedbackList = ({data , remove}) => {
                         return (
                             <div className='card'>
 
-                                <button className='close' onClick={()=>remove(feedback)}>
+                                <FcEmptyTrash className='close' onClick={()=>remove(feedback)}>
                                     x
-                                </button>
-                                <button className='edit'>
-                                    E
-                                </button>
+                                </FcEmptyTrash>
+                                <FaEdit className='edit' onClick={()=>edit(feedback)} >
+                                    
+                                </FaEdit>
                                 <h3 className='num-display'>{feedback.rating}</h3>
                                 <p> {feedback.text}</p>
                             </div>

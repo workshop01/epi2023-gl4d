@@ -274,3 +274,7 @@ section > div{
         flex: 0 1 25%;
     }
 }
+
+.active{
+    background: #fff;
+}
