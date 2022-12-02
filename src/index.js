@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { Basic } from './Basic';
 import { Cv } from './cv/Cv';
 import { Evenements } from './Evenements';
+import { Feedback } from './feedbackApp/Feedback';
 import { Login } from './Login';
 
 
@@ -16,7 +17,8 @@ root.render(
     
     {/* <Evenements /> */}
     {/* <Login/> */}
-    <Cv/>
+   {/*  <Cv/> */}
+   <Feedback/>
   </>
 );
 
