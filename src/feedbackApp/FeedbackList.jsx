@@ -1,9 +1,11 @@
 import React from 'react'
-import { FaEdit  } from "react-icons/fa";
-import { FcEmptyTrash } from "react-icons/fc";
+import { useContext } from 'react';
+import { GeneralContext } from '../GeneralContext';
 
-export const FeedbackList = ({data , remove , edit}) => {
-    
+import { FeedbackCard } from './FeedbackCard';
+
+export const FeedbackList = () => {
+    const {data} = useContext(GeneralContext)
     return (
         <div>
             {/* feedbacks */}
@@ -12,17 +14,7 @@ export const FeedbackList = ({data , remove , edit}) => {
                 {
                     data.map((feedback) => {
                         return (
-                            <div className='card'>
-
-                                <FcEmptyTrash className='close' onClick={()=>remove(feedback)}>
-                                    x
-                                </FcEmptyTrash>
-                                <FaEdit className='edit' onClick={()=>edit(feedback)} >
-                                    
-                                </FaEdit>
-                                <h3 className='num-display'>{feedback.rating}</h3>
-                                <p> {feedback.text}</p>
-                            </div>
+                            <FeedbackCard feedback={feedback}  />
                         )
                     })
                 }

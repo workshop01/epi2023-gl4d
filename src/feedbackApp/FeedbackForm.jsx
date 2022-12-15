@@ -1,10 +1,12 @@
 import React from 'react'
+import { useContext } from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
+import { GeneralContext } from '../GeneralContext'
 
-export const FeedbackForm = ({ send , editedFeed}) => {
+export const FeedbackForm = () => {
 
-
+    const { send , editedFeed} = useContext(GeneralContext)
     const [form, setForm] = useState({
         rating: 0, text: ''
     })

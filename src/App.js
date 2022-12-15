@@ -5,6 +5,7 @@ import { Navbar } from './components/Navbar';
 import { Cv } from './cv/Cv';
 import { Evenements } from './Evenements';
 import { Feedback } from './feedbackApp/Feedback';
+import { GeneralProvider } from './GeneralContext';
 import { Login } from './Login';
 export const App = () => {
   return (
@@ -13,6 +14,7 @@ export const App = () => {
         <Router>
 
             <Navbar/>
+            <GeneralProvider>
             <Routes>{/* <Switch> */}
                 {/* element ( comoponent v5) */}
                 <Route  path='/' exact element={<Feedback/>}></Route>
@@ -21,8 +23,11 @@ export const App = () => {
                 <Route  path='/basics' exact element={<Basic/>}></Route>
                 <Route  path='/login' exact element={<Login/>}></Route>
                 <Route  path='/cv/:name' exact element={<Cv/>}></Route>
+             
 
             </Routes>
+            </GeneralProvider>
+
         </Router>
         {/* Alt + shift + A  ou Ctrl + : */}
   {/* Alt + shift+ F : Formatage code */}

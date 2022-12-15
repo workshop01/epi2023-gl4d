@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { GeneralContext } from './GeneralContext'
 
 export const Login = () => {
 
+    const {users , register} = useContext(GeneralContext)
     const navigate = useNavigate()
     const [form, setForm] = useState({
         email: '', password: ''
@@ -12,12 +14,17 @@ export const Login = () => {
         event.preventDefault() // annuler l'action par defaut du bouton (refresh)
         console.log(form)
 
-        if(form.email === 'admin@admin.com'){
+        let exist = users.find(u=> u.email === form.email && u.password === form.password)
+        if(exist){
             navigate('/feedback')
+        }else{
+            alert('Email or password invalid')
         }
     }
     const setFormValue = (event, attribut) =>
         setForm({ ...form, [attribut]: event.target.value })
+
+       
     return (
 
 
@@ -31,6 +38,7 @@ export const Login = () => {
                     <input className='form-control' required type="password" minLength="6" onChange={(event) => setForm({ ...form, password: event.target.value })}></input>
                     <br></br>
                     <button className='form-control btn btn-primary' >Save</button>
+                    <button onClick={(e)=>register(e , form)}>Register</button>
                 </form>
             </div>
         </div>
